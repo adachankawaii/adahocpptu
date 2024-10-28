@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Học PPTU Cùng Ada</title>
     <link rel="icon" href="ada.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -119,15 +118,71 @@
             color: #4caf50;
         }
 
-        p {
+        p, ul {
             line-height: 1.6; /* Bạn có thể thay đổi giá trị này tùy theo nhu cầu */
         }
+
 
     </style>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+    <!-- <div class="container" id="container">
+
+        <div class="page">
+            <h2>Page 1</h2>
+            <h2>Mệnh đề 1.2</h2>
+            <p id="referencePoint">
+                Cho hàm \( f \) xác định trên \( \mathbb{R}^n \) và điểm \( x^0 \in \mathbb{R}^n \). Nếu \( f \) khả vi tại \( x^0 \) thì
+            </p>
+            \[
+            f'(x^0, d) = \langle \nabla f(x^0), d \rangle, \quad \forall d \in \mathbb{R}^n \setminus \{0\}.
+            \]
+        
+            <h3 class="link" data-reference="referencePoint2" data-range="endReferencePoint">Ý nghĩa hình học</h3>
+            <p id="referencePoint2">
+                Cho hướng \( d \in \mathbb{R}^n \setminus \{0\} \). Kí hiệu \( \alpha \) là góc giữa \( d \) và \( \nabla f(x^0) \). Ta có
+            </p>
+            \[
+            \langle \nabla f(x^0), d \rangle = \|\nabla f(x^0)\| \|d\| \cos \alpha.
+            \]
+            <p id="endReferencePoint"></p>
+            <p>
+                Như vậy, nếu \( \alpha \) là góc tù thì \( d \) là hướng giảm của hàm \( f \) tại \( x^0 \).
+            </p>
+        </div>
+        <div class="page">
+            <h2>Page 2</h2>
+            <p>Content for page 2...</p>
+        </div>
+        <div class="page">
+            <h2>Page 3</h2>
+            <p>Content for page 3...</p>
+        </div>
+        <div class="page">
+            <h2>Page 4</h2>
+            <p>Content for page 4...</p>
+        </div>
+        <div class="page">
+            <h2>Chứng minh Mệnh đề 6.1</h2>
+            <p>
+                Vì \( f \) khả vi tại \( x^0 \) nên theo <span class="link" data-reference="referencePoint2">Mệnh đề 1.2</span> và giả thiết của Mệnh đề 6.1, ta có
+            </p>
+            \[
+            f'(x^0, d) = \lim_{t \to 0^+} \frac{f(x^0 + td) - f(x^0)}{t} = \langle \nabla f(x^0), d \rangle < 0.
+            \]
+            <p>
+                Do đó, \( f(x^0 + td) - f(x^0) < 0 \) với \( t \) đủ nhỏ. Mệnh đề đã được chứng minh.
+            </p>
+
+            <h2>Page 5</h2>
+        </div>
+        <div class="page">
+            <h2>Page 6</h2>
+            <p>Content for page 6...</p>
+        </div>
+    </div> -->
     <div class="container" id="container">
         <div class="page" id="Khái niệm cơ bản">
 
@@ -1297,6 +1352,67 @@
                 Do đó ta chọn \( x^1 = (1, 1)^T \). Vì \( \nabla f(x^1) = (0, 0)^T \) nên dừng thuật toán với điểm dừng \( x^1 = (1, 1)^T \).
             </p>
         </div>
+
+        <div class="page" id="Phương pháp Newton">
+
+            <h2>Thuật toán Newton thuần túy giải bài toán \( (P^{krb}) \)</h2>
+            <p><strong>Bước khởi đầu.</strong> Xuất phát từ một điểm tùy ý \( x^0 \in \mathbb{R}^n \) đủ gần điểm dừng \( x^* \) và \( \nabla f(x^0) \neq 0 \). Chọn trước số \( \varepsilon > 0 \) đủ nhỏ. Đặt \( k := 0 \);</p>
+        
+            <h4>Bước lặp \( k \) (k = 0, 1, 2, ...)</h4>
+            <ul>
+                <li>\((k_1)\) Tính hướng Newton \( p^k \) của hàm \( f \) tại \( x^k \) bằng việc giải hệ phương trình tuyến tính
+                    \[
+                    [\nabla^2 f(x^k)] \cdot p^k = -\nabla f(x^k).
+                    \]
+                </li>
+                <li>\((k_2)\) Xác định \( x^{k+1} := x^k + p^k \) và \( \nabla f(x^{k+1}) \);</li>
+                <li>\((k_3)\) If \( \| \nabla f(x^{k+1}) \| < \varepsilon \) Then Dừng thuật toán (lấy điểm dừng \( x^* \approx x^{k+1} \))<br>
+                    Else \( k := k + 1 \) và quay lại Bước lặp \( k \).
+                </li>
+            </ul>
+
+            <h2>Định lý 6.7 (Định lý hội tụ)</h2>
+            <p>Giả sử:</p>
+            <ol type="i">
+                <li>Hàm \( f \) khả vi hai lần trên \( \mathbb{R}^n \);</li>
+                <li>Hàm \( \nabla^2 f(x) \) là liên tục và Lipschitz trong lân cận của điểm dừng \( x^* \) của hàm \( f \), tức tồn tại lân cận \( B(x^*, \varepsilon) \) và số \( L > 0 \) sao cho
+                    \[
+                    \| \nabla^2 f(x) - \nabla^2 f(y) \| \leq L \| x - y \|, \quad \forall x, y \in B(x^*, \varepsilon);
+                    \]
+                </li>
+                <li>Ma trận \( \nabla^2 f(x) \) xác định dương tại mọi \( x \in \mathbb{R}^n \).</li>
+            </ol>
+            <p>Khi đó, nếu xuất phát từ một điểm đủ gần \( x^* \) thì dãy \( \{ x^k \} \) sinh ra bởi Thuật toán Newton thuần túy hội tụ tới \( x^* \) theo tốc độ cấp hai.</p>
+        
+        </div>
+
+        <div class="page">
+            <h2>Bài tập dùng PP Newton</h2>
+            <p>
+                Sử dụng thuật toán Newton thuần túy giải bài toán
+                \[
+                \min \{ f(x) = x^4 - 1 \,|\, x \in \mathbb{R} \}
+                \]
+                với điểm xuất phát \( x^0 = 4 \). Tính 3 điểm tiếp theo \( x^1 \), \( x^2 \) và \( x^3 \). Chứng minh rằng, dãy \( \{ x^k \} \) sinh bởi thuật toán này sẽ hội tụ đến nghiệm cực tiểu của bài toán đang xét.
+            </p>
+            <p><strong>Giải.</strong> Để thấy bài toán có nghiệm cực tiểu duy nhất là \( x^* = 0 \). Ta có \( f'(x) = 4x^3 \) và \( f''(x) = 12x^2 > 0 \) với mọi \( x \in \mathbb{R} \setminus \{0\} \). Do đó, hướng Newton \( p^k \) của hàm \( f \) tại một điểm \( x^k \) cũng là hướng giảm của hàm \( f \) tại \( x^k \) và
+                \[
+                p^k = -\frac{f'(x^k)}{f''(x^k)} = -\frac{1}{3} x^k.
+                \]
+                Giả sử biết \( x^k \), theo thuật toán Newton thuần túy, điểm tiếp theo \( x^{k+1} \) được xác định bởi
+                \[
+                x^{k+1} := x^k + p^k = x^k - \frac{1}{3} x^k = \frac{2}{3} x^k.
+                \]
+                Xuất phát từ \( x^0 = 4 \), ta có
+                \[
+                x^1 = \frac{2}{3} x^0 = \frac{8}{3}; \quad x^2 = \frac{2}{3} x^1 = \left( \frac{2}{3} \right)^2 x^0 = \frac{16}{9}; \quad x^3 = \frac{2}{3} x^2 = \left( \frac{2}{3} \right)^3 x^0 = \frac{32}{27}.
+                \]
+                Do đó
+                \[
+                x^k = \left( \frac{2}{3} \right)^k x^0 = 4 \left( \frac{2}{3} \right)^k \Rightarrow \{ x^k \} \to 0 \quad \text{khi} \quad k \to \infty.
+                \]
+            </p>
+        </div>
         <div class="page" id="Đề 1">
 
             <h2>Đề 1 - Kiểm tra giữa kỳ: Nhập môn Tối ưu - HK20201</h2>
@@ -1347,7 +1463,35 @@
         </div>    
 
         <div class="page" id="Giải Đề 1">
-        
+            <h2> Giải bài 2.2</h2>
+            <p>
+                Xét \( E = \text{conv}(u^0, u^1, \dots, u^k) \) \(\Rightarrow E\) là tập lồi
+            </p>
+            <p>
+                Xét lân cận của \( u^0 \) là \( B(u^0, \varepsilon) \). \( \varepsilon = \min \| u^0 - u^i \| \quad \forall i = 1, k \)
+            </p>
+            <p>
+                Xét \( x \) bất kỳ thuộc \( B(u^0, \varepsilon) \cap E \)
+            </p>
+            <p>
+                \( x - u^0 \) được biểu diễn thông qua tổ hợp lồi của \( u^1 - u^0,  \ldots, u^k - u^0 \)
+            </p>
+            <p>
+                \( x^0 - u^0 = \lambda_1 (u^1 - u^0) + \dots + \lambda_k (u^k - u^0) \)
+            </p>
+            <p>\( \Rightarrow \langle d, x^0 - u^0 \rangle = \sum_{i=1}^{k} \lambda_i \langle d, u^i - u^0 \rangle \geq 0 \)</p>
+            <p>
+                \(\Rightarrow \langle d, x^0 \rangle \geq \langle d, u^0 \rangle \)
+            </p>
+            <p>
+                \(\Rightarrow u^0 \) là nghiệm tối ưu địa phương trong \( B(u^0, \varepsilon) \cap E \)
+            </p>
+            <p>
+                Mà đây là bài toán quy hoạch tuyến tính \( \Rightarrow \) quy hoạch lồi
+            </p>
+            <p>
+                \(\Rightarrow u^0 \) là nghiệm tối ưu của bài toán.
+            </p>
         </div>
 
         <div class="page" id="Đề 2">
