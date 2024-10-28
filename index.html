@@ -128,61 +128,6 @@
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <!-- <div class="container" id="container">
-
-        <div class="page">
-            <h2>Page 1</h2>
-            <h2>Mệnh đề 1.2</h2>
-            <p id="referencePoint">
-                Cho hàm \( f \) xác định trên \( \mathbb{R}^n \) và điểm \( x^0 \in \mathbb{R}^n \). Nếu \( f \) khả vi tại \( x^0 \) thì
-            </p>
-            \[
-            f'(x^0, d) = \langle \nabla f(x^0), d \rangle, \quad \forall d \in \mathbb{R}^n \setminus \{0\}.
-            \]
-        
-            <h3 class="link" data-reference="referencePoint2" data-range="endReferencePoint">Ý nghĩa hình học</h3>
-            <p id="referencePoint2">
-                Cho hướng \( d \in \mathbb{R}^n \setminus \{0\} \). Kí hiệu \( \alpha \) là góc giữa \( d \) và \( \nabla f(x^0) \). Ta có
-            </p>
-            \[
-            \langle \nabla f(x^0), d \rangle = \|\nabla f(x^0)\| \|d\| \cos \alpha.
-            \]
-            <p id="endReferencePoint"></p>
-            <p>
-                Như vậy, nếu \( \alpha \) là góc tù thì \( d \) là hướng giảm của hàm \( f \) tại \( x^0 \).
-            </p>
-        </div>
-        <div class="page">
-            <h2>Page 2</h2>
-            <p>Content for page 2...</p>
-        </div>
-        <div class="page">
-            <h2>Page 3</h2>
-            <p>Content for page 3...</p>
-        </div>
-        <div class="page">
-            <h2>Page 4</h2>
-            <p>Content for page 4...</p>
-        </div>
-        <div class="page">
-            <h2>Chứng minh Mệnh đề 6.1</h2>
-            <p>
-                Vì \( f \) khả vi tại \( x^0 \) nên theo <span class="link" data-reference="referencePoint2">Mệnh đề 1.2</span> và giả thiết của Mệnh đề 6.1, ta có
-            </p>
-            \[
-            f'(x^0, d) = \lim_{t \to 0^+} \frac{f(x^0 + td) - f(x^0)}{t} = \langle \nabla f(x^0), d \rangle < 0.
-            \]
-            <p>
-                Do đó, \( f(x^0 + td) - f(x^0) < 0 \) với \( t \) đủ nhỏ. Mệnh đề đã được chứng minh.
-            </p>
-
-            <h2>Page 5</h2>
-        </div>
-        <div class="page">
-            <h2>Page 6</h2>
-            <p>Content for page 6...</p>
-        </div>
-    </div> -->
     <div class="container" id="container">
         <div class="page" id="Khái niệm cơ bản">
 
@@ -654,7 +599,6 @@
         </div>
 
         <div class="page" id ="Hàm lồi">
-
             <h2 id="hamloi">Hàm lồi (Convex Function)</h2>
             <p>
                 Hàm \( f \) được gọi là <em>hàm lồi</em> (convex function) xác định trên tập lồi \( X \subseteq \mathbb{R}^n \) nếu
@@ -804,8 +748,7 @@
             </p>
             \[
             y^T \nabla^2 f(x) y < 0 \quad \forall y \in \mathbb{R}^n \setminus \{0\}.
-            \]
-
+            \]  
         </div>
 
         <div class="page">
@@ -867,7 +810,6 @@
 
         </div>
 
-        <!-- Trang 1 -->
         <div class="page" id="Bài toán tối ưu">
             <h2 id="menhde2.1">Mệnh đề 2.1</h2>
             <p>
@@ -929,7 +871,6 @@
 
         </div>
 
-        <!-- Trang 2 -->
         <div class="page">
             <h2>Chứng minh Mệnh đề 2.1</h2>
 
@@ -984,7 +925,6 @@
 
         </div>
 
-        <!-- Trang 3 -->
         <div class="page" id="Quy hoạch phi tuyến">
             <h2 id="dinhly6.1">Định lý 6.1 (Điều kiện bậc nhất)</h2>
             <p>
@@ -1056,7 +996,6 @@
 
         </div>
         
-        <!-- Trang 4 -->
         <div class="page">
 
             <h3>Nhận xét 6.1</h3>
@@ -1118,7 +1057,6 @@
 
         </div>        
         
-        <!-- Trang 5 -->
         <div class="page" id = "Các thủ tục QHPT">
 
         
@@ -1162,6 +1100,8 @@
             \[
             t_k = -\frac{(A x^k - b)^T d^k}{(d^k)^T A d^k} > 0.
             \]
+    
+            <h3 id="thutucquaylui">Thủ tục quay lui</h3>
         
             <h2 id="menhde6.5">Mệnh đề 6.5</h2>
             <p>
@@ -1175,9 +1115,27 @@
             Điều kiện \( f(x^k + t_k d^k) \leq f(x^k) + m_1 t_k \langle \nabla f(x^k), d^k \rangle, \) với \( m_1 \in (0, 1) \) và \( t_k > 0 \)
             được gọi là <em>điều kiện Armijo</em>. Mệnh đề 6.5 đã chỉ ra rằng điều kiện này được thỏa mãn với \( t_k \) đủ nhỏ.
             </p>
+
+
+            <h2>Thủ tục quay lui (Quy tắc Armijo)</h2>
+
+            <p>
+                ◇ <strong>Đầu vào:</strong> điểm \( x^k \in \mathbb{R}^n \) và hướng giảm \( d^k \) của hàm \( f \) tại \( x^k \);<br>
+                ◇ <strong>Đầu ra:</strong> điểm \( x^{k+1} \) trên tia \( x^k + t_k d^k \), \( t_k > 0 \) thỏa mãn \( f(x^{k+1}) < f(x^k) \).
+            </p>
+
+            <p><strong>Bước 1.</strong> Tùy chọn \( m_1 \in (0, 1) \) và \( \alpha \in (0, 1) \) (chẳng hạn, \( \alpha = \frac{1}{2} \)). Đặt \( t_k := 1 \).</p>
+
+            <p><strong>Bước 2.</strong> Tính \( x^{k+1} := x^k + t_k d^k \) và \( f(x^{k+1}) \);</p>
+
+            <p><strong>Bước 3.</strong> If \( f(x^{k+1}) \leq f(x^k) + m_1 t_k \langle \nabla f(x^k), d^k \rangle \)<br>
+            Then Dừng thủ tục (ta có \( x^{k+1} \))<br>
+            Else \( t_k := \alpha t_k \) và quay về Bước 2;</p>
+
+            <p><em>Nhận xét rằng, trong thủ tục quay lui, để xác định điểm tiếp theo, ta không cần phải giải bài toán cực tiểu hàm một biến.</em></p>
+
         </div>
         
-        <!-- Trang 6 -->
         <div class="page">
             <h2>Chứng minh Mệnh đề 6.5</h2>
             <p>
@@ -1198,7 +1156,521 @@
 
             Kết hợp điều này với giả thiết \( \langle \nabla f(x^k), d^k \rangle < 0 \) ta có điều phải chứng minh.
 
-        </div>        
+        </div>  
+        
+        <div class="page" id="Gradient Descent">
+
+            <h2>Thuật toán gradient với thủ tục tìm chính xác theo tia</h2>
+            <p>
+                Trong thuật toán này, tại mỗi bước lặp \( k \), điểm lặp tiếp theo được xác định bởi
+            </p>
+            <p>
+                \[
+                x^{k+1} := x^k - t_k \nabla f(x^k),
+                \]
+            </p>
+            <p>
+                trong đó \( t_k \) là nghiệm cực tiểu của hàm một biến \( \varphi(t) := f(x^k - t \nabla f(x^k)) \) với \( t > 0 \).
+            </p>
+        
+            <h4>Bước lặp \( k \) (k = 0, 1, 2, ...)</h4>
+            <ul>
+                <li>\((k_1)\) Tính \( x^{k+1} := x^k - t_k \nabla f(x^k) \), trong đó 
+                    \[
+                    t_k = \arg \min \{ \varphi_k(t), \, t > 0 \};
+                    \]
+                </li>
+                <li>\((k_2)\) Tính \( \nabla f(x^{k+1}) \);</li>
+                <li>\((k_3)\) If \( \| \nabla f(x^{k+1}) \| < \varepsilon \) Then Dừng thuật toán (lấy điểm dừng \( x^* \approx x^{k+1} \))<br>
+                    Else \( k := k + 1 \) và quay lại Bước lặp \( k \).
+                </li>
+            </ul>
+        
+            <p><strong>Chú ý 6.1:</strong> Theo Mệnh đề 6.4, nếu hàm mục tiêu của bài toán \((P^{k+b})\) là hàm toàn phương lồi chặt
+            \[
+            f(x) = \frac{1}{2} x^T A x - b^T x + c
+            \]
+            thì ta có công thức tính độ dài bước chính xác \( t_k \) tại mỗi bước lặp \( k \) là
+            \[
+            t_k = \frac{(A x^k - b)^T \nabla f(x^k)}{(\nabla f(x^k))^T A \nabla f(x^k)} > 0.
+            \]
+            </p>
+
+            <h2>Định lý 6.4 (Định lý hội tụ)</h2>
+            <p>
+                ([26], trang 41) Cho \( x^0 \in \mathbb{R}^n \) và hàm \( f \) khả vi liên tục trên \( \mathbb{R}^n \) và có tập mức dưới 
+                \[
+                \{ x \in \mathbb{R}^n \,|\, f(x) \leq f(x^0) \}
+                \]
+                bị chặn. Khi đó, mọi điểm tụ \( x^* \) của dãy \( \{ x^k \} \) được chọn như trong Thuật toán 6.1 thỏa mãn \( \nabla f(x^*) = 0 \).
+            </p>
+
+            <h2>Thuật toán gradient với thủ tục quay lui</h2>
+            <p>
+                Trong thuật toán này, tại mỗi bước lặp \( k \), chọn hướng giảm \( d^k = -\nabla f(x^k) \) và độ dài bước \( t_k \) được xác định theo thủ tục quay lui.
+            </p>
+        
+            <p><strong>Bước khởi đầu.</strong> Tùy chọn \( m_1 \in (0, 1) \) và \( \alpha \in (0, 1) \). Chọn số thực \( \varepsilon > 0 \) đủ nhỏ. Xuất phát từ một điểm tùy ý \( x^0 \in \mathbb{R}^n \) có \( \nabla f(x^0) \neq 0 \). Đặt \( k := 0 \).</p>
+        
+            <h5>Bước lặp \( k \), \( (k = 0, 1, 2, \ldots) \)</h5>
+            <ul>
+                <li>\((k_1)\) Đặt \( t_k := 1 \);</li>
+                <li>\((k_2)\) Tính \( x^{k+1} := x^k - t_k \nabla f(x^k) \) và \( f(x^{k+1}) \);</li>
+                <li>\((k_3)\) If \( f(x^{k+1}) - f(x^k) \leq m_1 t_k \langle \nabla f(x^k), -\nabla f(x^k) \rangle = -m_1 t_k \| \nabla f(x^k) \|^2 \)<br>
+                    Then Chuyển Bước \( k_4 \)<br>
+                    Else \( t_k := \alpha t_k \) và quay về Bước \( k_2 \);
+                </li>
+                <li>\((k_4)\) Tính \( \nabla f(x^{k+1}) \);</li>
+                <li>\((k_5)\) If \( \| \nabla f(x^{k+1}) \| < \varepsilon \) Then Dừng thuật toán (lấy điểm dừng \( x^* \approx x^{k+1} \))<br>
+                    Else \( k := k + 1 \), quay lại Bước lặp \( k \).
+                </li>
+            </ul>
+
+            <h2>Định lý 6.5 (Định lý hội tụ)</h2>
+            <p>
+                Giả sử hàm \( f(x) \) bị chặn dưới, gradient \( \nabla f(x) \) thỏa mãn điều kiện Lipschitz, tức tồn tại \( L > 0 \) sao cho
+                \[
+                \| \nabla f(x) - \nabla f(y) \| \leq L \| x - y \|, \quad \forall x, y \in \mathbb{R}^n.
+                \]
+                Khi đó, với bất kỳ điểm xuất phát \( x^0 \), dãy \( \{ x^k \} \) được chọn như trong Thuật toán 6.2 có tính chất \( \| \nabla f(x^k) \| \to 0 \) khi \( k \to \infty \).
+            </p>
+
+        </div>
+        <div class="page">
+            <h2>Bài tập dùng PP tìm chính xác theo tia</h2>
+            <p>
+                Xét bài toán \( (P^{k+b}) \) với hàm mục tiêu là như ở Ví dụ 6.2, tức
+                \[
+                f(x_1, x_2) = x_1^3 + x_2^2 - 3x_1 - 2x_2 + 12.
+                \]
+                Quá trình giải bài toán này theo Thuật toán 6.1, xuất phát từ \( x^0 = (1, 2)^T \), như sau: Ta có
+                \[
+                \nabla f(x) = \begin{pmatrix} 3x_1^2 - 3 \\ 2x_2 - 2 \end{pmatrix} \Rightarrow \nabla f(x^0) = \begin{pmatrix} 0 \\ 2 \end{pmatrix} \neq 0.
+                \]
+                Đặt
+                \[
+                \varphi_0(t) = f(x^0 - t \nabla f(x^0)) = f\left( \begin{pmatrix} 1 \\ 2 - 2t \end{pmatrix} \right) = 4t^2 - 4t + 10.
+                \]
+                Ta có \( \varphi_0'(t) = 8t - 4 \). Do đó
+                \[
+                \varphi_0'(t) = 0 \Leftrightarrow t = \frac{1}{2}.
+                \]
+                Vì \( \varphi_0''(t) = 8 > 0 \) nên \( t_0 = \frac{1}{2} \) là nghiệm cực tiểu của \( \varphi_0(t) \) với \( t \geq 0 \). Do đó, ta có điểm lặp tiếp theo là
+                \[
+                x^1 = x^0 - t_0 \nabla f(x^0) = \begin{pmatrix} 1 \\ 1 \end{pmatrix}.
+                \]
+            </p>
+            <p>
+                Vì \( \nabla f(x^1) = (0, 0)^T \) nên \( x^1 \) là điểm dừng của hàm \( f(x) \). Dừng thuật toán. Như đã biết trong Ví dụ 6.2, điểm \( x^1 \) cũng là nghiệm cực tiểu địa phương chặt của hàm \( f \).
+            </p>
+
+            <h2>Bài tập dùng PP Quay lui</h2>
+            <p>
+                Xét bài toán \( (P^{k+b}) \) như ở Ví dụ 6.2, tức có
+                \[
+                f(x_1, x_2) = x_1^3 + x_2^2 - 3x_1 - 2x_2 + 12.
+                \]
+                Quá trình giải bài toán này theo Thuật toán 6.2 như sau: Chọn \( m_1 = 0.01 \), \( \alpha = 0.5 \). Cũng xuất phát từ điểm \( x^0 = (1, 2)^T \) và ta có
+                \[
+                \nabla f(x^0) = (0, 2)^T \neq (0, 0)^T.
+                \]
+                Đặt \( t_0 = 1 \). Suy ra
+                \[
+                x^1 = x^0 - t_0 \nabla f(x^0) = \begin{pmatrix} 1 \\ 2 \end{pmatrix} - \begin{pmatrix} 0 \\ 2 \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \quad f(x^0) = f(x^1) = 10.
+                \]
+                Vì
+                \[
+                f(x^1) - f(x^0) = 10 - 10 = 0 > -m_1 t_0 \| \nabla f(x^0) \|^2 = -0.04
+                \]
+                nên đặt
+                \[
+                t_0 = \alpha t_0 = 0.5.
+                \]
+                Tính lại
+                \[
+                x^1 = x^0 - t_0 \nabla f(x^0) = \begin{pmatrix} 1 \\ 2 \end{pmatrix} - 0.5 \begin{pmatrix} 0 \\ 2 \end{pmatrix} = \begin{pmatrix} 1 \\ 1 \end{pmatrix}
+                \]
+                và
+                \[
+                f(x^1) - f(x^0) = 9 - 10 = -1 < -m_1 t_0 \| \nabla f(x^0) \|^2 = -0.02.
+                \]
+                Do đó ta chọn \( x^1 = (1, 1)^T \). Vì \( \nabla f(x^1) = (0, 0)^T \) nên dừng thuật toán với điểm dừng \( x^1 = (1, 1)^T \).
+            </p>
+        </div>
+        <div class="page" id="Đề 1">
+
+            <h2>Đề 1 - Kiểm tra giữa kỳ: Nhập môn Tối ưu - HK20201</h2>
+        
+            <p><strong>Kí hiệu:</strong> \( \beta := \text{ngày sinh và } \alpha := \text{tháng sinh của em} \)</p>
+        
+            <h3>1. Xét bài toán</h3>
+            <p>
+                \[
+                \min f(u) = 2u_1u_2 + u_2^2 + 3u_1^2 - 8u_2 + 4u_1 + \beta \quad \text{với } u \in \mathbb{R}^2.
+                \]
+                (P<sub>1</sub>)
+            </p>
+            <ol type="i">
+                <li>Hàm \( f(u) \) có phải là hàm lồi trên \( \mathbb{R}^2 \) không?</li>
+                <li>Phát biểu điều kiện cần bậc nhất của nghiệm tối ưu địa phương của bài toán \( (P_1) \). Đó có phải điều kiện đủ không? Vì sao?</li>
+                <li>Cho \( u^0 = (0, \alpha)^T \). Xác định \( u^1 \) bằng thuật toán Newton thuần túy. Điểm \( u^1 \) có phải là nghiệm tối ưu của bài toán \( (P_1) \) không?</li>
+            </ol>
+        
+            <h3>2. Xét bài toán</h3>
+            <p>
+                \[
+                \min h(x) = \langle d, x \rangle + \beta : x \in M
+                \]
+                (P<sub>2</sub>)
+            </p>
+            <p>Trong đó véc tơ \( d \in \mathbb{R}^n \setminus \{0\} \) và \( M \subset \mathbb{R}^n \) là đa diện khác rỗng.</p>
+            <ol type="i">
+                <li>Nếu \( x^1, x^2 \in \text{Argmin}(P_2) \) và \( x^* \) là tổ hợp lồi của \( x^1, x^2 \) thì \( x^* \) có là nghiệm của bài toán \( (P_2) \) không? Vì sao?</li>
+                <li>Cho \( u^0 \) là đỉnh của đa diện \( M \). Giả sử có đúng \( h \) đỉnh kề với \( u^0 \) là \( u^1, u^2, \ldots, u^h \) và 
+                    \[
+                    \langle d, u^0 \rangle \leq \langle d, u^i \rangle \quad \forall i = 1, 2, \ldots, h.
+                    \]
+                    Chứng minh \( u^0 \) là nghiệm tối ưu của bài toán \( (P_2) \).
+                </li>
+            </ol>
+        
+            <h3>3. Giải bài toán</h3>
+            <p>
+                \[
+                \max \{ k(x) = \langle \omega, x \rangle + \beta : x \in D \}
+                \]
+                Bằng thuật toán hình học với \( \omega = (10, 20)^T \) và 
+                \[
+                D = \{ x \in \mathbb{R}^2 : 2x_1 + x_2 \geq 4, x_1 - x_2 \leq 3, x_1 \geq 1, x_2 \geq 0 \}.
+                \]
+            </p>
+        </div>    
+
+        <div class="page" id="Giải Đề 1">
+        
+        </div>
+
+        <div class="page" id="Đề 2">
+
+            <h2>Đề 2 - Kiểm tra giữa kỳ: Nhập môn Tối ưu - HK20201</h2>
+        
+            <p><strong>Kí hiệu:</strong> \( \beta := \text{ngày sinh và } \alpha := \text{tháng sinh của em} \)</p>
+        
+            <h3>1. Cho vector \( v \in \mathbb{R}^n \setminus \{0\} \), đa diện khác rỗng \( X \subset \mathbb{R}^n \). Ký hiệu</h3>
+            <p>
+                \[
+                T = \text{Argmin}\{ g(x) = \langle v, x \rangle + \beta : x \in X \}.
+                \]
+            </p>
+            <ol type="i">
+                <li>Cho \( x^* \) là tổ hợp lồi của \( x^1, x^2 \in T \). Chứng minh rằng \( x^* \in T \).</li>
+                <li>Giả sử đỉnh \( x^0 \) của đa diện \( X \) có đúng \( k \) đỉnh kề là \( x^1, x^2, \ldots, x^k \) và
+                    \[
+                    \langle v, x^0 \rangle \leq \langle v, x^i \rangle \quad \forall i = 1, 2, \ldots, k.
+                    \]
+                    Chứng minh \( x^0 \in T \).
+                </li>
+            </ol>
+        
+            <h3>2. Xét bài toán</h3>
+            <p>
+                \[
+                \min k(u) = 4u_1 + 3u_1^2 + 2u_1u_2 + u_2^2 - 8u_2 + \alpha \quad \text{v.d.k. } u \in \mathbb{R}^2.
+                \]
+                (P<sub>1</sub>)
+            </p>
+            <ol type="i">
+                <li>Hàm \( k(u) \) có phải là hàm lồi trên \( \mathbb{R}^2 \) không?</li>
+                <li>Phát biểu điều kiện cần bậc nhất của nghiệm tối ưu địa phương của bài toán \( (P_1) \). Đó có phải điều kiện đủ không? Vì sao?</li>
+                <li>Cho \( u^0 = (0, \alpha)^T \). Xác định \( u^1 \) bằng thuật toán Newton thuần túy. Điểm \( u^1 \) có phải là nghiệm tối ưu của bài toán \( (P_1) \) không?</li>
+            </ol>
+        
+            <h3>3. Giải bài toán</h3>
+            <p>
+                \[
+                \min \{ k(x) = \langle \omega, x \rangle + \beta : x \in D \}
+                \]
+                bằng thuật toán hình học với \( \omega = (12, 24)^T \) và 
+                \[
+                D = \{ x \in \mathbb{R}^2 : x_1 - x_2 \leq 5, 2x_1 + x_2 \geq 6, x_2 \geq 1, x_1 \geq 0 \}.
+                \]
+            </p>
+        </div>
+
+        <div class="page" id="Giải Đề 2"></div>
+
+        <div class="page" id="Đề 3">
+
+            <h2>Đề 3 - Kiểm tra giữa kỳ: Nhập môn Tối ưu - HK20201</h2>
+
+            <p><strong>Kí hiệu:</strong> \( \beta := \text{ngày sinh và } \alpha := \text{tháng sinh của em} \)</p>
+
+            <h3>1. Cho vector \( v \in \mathbb{R}^n \setminus \{0\} \), đa diện khác rỗng \( X \subset \mathbb{R}^n \). Ký hiệu</h3>
+            <p>
+                \[
+                T = \text{Argmin}\{ g(x) = \langle v, x \rangle + \beta : x \in X \}.
+                \]
+            </p>
+            <ol type="i">
+                <li>Cho \( x^* \) là tổ hợp lồi của \( x^1, x^2 \in T \). Chứng minh rằng \( x^* \in T \).</li>
+                <li>Giả sử đỉnh \( x^0 \) của đa diện \( X \) có đúng \( k \) đỉnh kề là \( x^1, x^2, \ldots, x^k \) và
+                    \[
+                    \langle v, x^0 \rangle \leq \langle v, x^i \rangle \quad \forall i = 1, 2, \ldots, k.
+                    \]
+                    Chứng minh \( x^0 \in T \).
+                </li>
+            </ol>
+
+            <h3>2. Xét bài toán</h3>
+            <p>
+                \[
+                \min k(u) = 4u_1 + 3u_1^2 + 2u_1u_2 + u_2^2 - 8u_2 + \alpha \quad \text{v.d.k. } u \in \mathbb{R}^2.
+                \]
+                (P<sub>1</sub>)
+            </p>
+            <ol type="i">
+                <li>Hàm \( k(u) \) có phải là hàm lồi trên \( \mathbb{R}^2 \) không?</li>
+                <li>Phát biểu điều kiện cần bậc nhất của nghiệm tối ưu địa phương của bài toán \( (P_1) \). Đó có phải điều kiện đủ không? Vì sao?</li>
+                <li>Cho \( u^0 = (0, \alpha)^T \). Xác định \( u^1 \) bằng thuật toán Newton thuần túy. Điểm \( u^1 \) có phải là nghiệm tối ưu của bài toán \( (P_1) \) không?</li>
+            </ol>
+
+            <h3>3. Giải bài toán</h3>
+            <p>
+                \[
+                \min \{ k(x) = \langle \omega, x \rangle + \beta : x \in D \}
+                \]
+                bằng thuật toán hình học với \( \omega = (12, 6)^T \) và 
+                \[
+                D = \{ x \in \mathbb{R}^2 : -x_1 + x_2 \leq 5, 2x_1 + 5x_2 \geq 10, x_2 \geq 1, x_1 \geq 0 \}.
+                \]
+            </p>
+        </div>
+
+        <div class="page" id="Giải Đề 3"></div>
+
+        <div class="page" id="Đề 4">
+    
+            <h2>Đề 4 - Kiểm tra giữa kỳ: Nhập môn Tối ưu - HK20201</h2>
+
+            <p><strong>Kí hiệu:</strong> \( \beta := \text{ngày sinh và } \alpha := \text{tháng sinh của em} \)</p>
+        
+            <h3>1. Xét bài toán</h3>
+            <p>
+                \[
+                \min h(u) = (u_1 - \alpha)^2 + 3(u_2 - 6)^2 + (u_1 - \alpha)u_2 \quad \text{v.d.k. } u \in \mathbb{R}^2.
+                \]
+                (P<sub>1</sub>)
+            </p>
+            <ol type="i">
+                <li>Hàm \( h(u) \) có phải là hàm lồi trên \( \mathbb{R}^2 \) không?</li>
+                <li>Phát biểu điều kiện cần bậc nhất của nghiệm tối ưu địa phương của bài toán \( (P_1) \). Đó có phải điều kiện đủ không? Vì sao?</li>
+                <li>Cho \( u^0 = (\alpha, 6)^T \). Xác định \( u^1 \) bằng thuật toán Gradient với thủ tục tìm chính xác theo tia. Điểm \( u^1 \) có phải là nghiệm tối ưu của bài toán \( (P_1) \) không?</li>
+            </ol>
+        
+            <h3>2. Xét bài toán</h3>
+            <p>
+                \[
+                \min f(x) = \frac{1}{2} x^T Q x - \langle c, x \rangle + \beta \quad \text{v.d.k. } x \in \mathbb{R}^n,
+                \]
+                (P<sub>2</sub>)
+            </p>
+            <p>trong đó \( Q \) là ma trận cấp \( n \times n \) đối xứng, xác định dương và vector \( c \in \mathbb{R}^n \setminus \{0\} \).</p>
+            <p>Cho điểm bất kỳ \( x^0 \in \mathbb{R}^n \) có \( \nabla f(x^0) \neq 0 \). Chứng minh rằng, nếu \( x^1 \) được xác định bằng thuật toán Newton thuần túy thì \( x^1 \in \text{Argmin}(P_2) \).</p>
+        
+            <h3>3. Giải bài toán</h3>
+            <p>
+                \[
+                \max \{ \varphi(x) = \langle c, x \rangle + \beta : x \in P \}
+                \]
+                bằng thuật toán hình học với \( c = (12, 6)^T \) và 
+                \[
+                P = \{ x \in \mathbb{R}^2 : -x_1 + x_2 \leq 5, 2x_1 + 5x_2 \geq 10, x_2 \geq 1, x_1 \geq 0 \}.
+                \]
+            </p>
+        </div>
+
+        <div class="page" id="Giải Đề 4"></div>
+
+        <div class="page" id="Đề 5">
+    
+            <h2>Đề 5 - Kiểm tra giữa kỳ: Nhập môn Tối ưu - HK20201</h2>
+
+            <p><strong>Kí hiệu:</strong> \( \beta := \text{ngày sinh và } \alpha := \text{tháng sinh của em} \)</p>
+        
+            <h3>1. Xét bài toán</h3>
+            <p>
+                \[
+                \min f(x) = 2x_1x_2 + 3x_2^2 + x_1^2 - 8x_1 + 4x_2 + \alpha \quad \text{v.d.k. } u \in \mathbb{R}^2.
+                \]
+                (P<sub>1</sub>)
+            </p>
+            <ol type="i">
+                <li>Hàm \( f(x) \) có phải là hàm lồi trên \( \mathbb{R}^2 \) không?</li>
+                <li>Phát biểu điều kiện cần bậc nhất của nghiệm tối ưu địa phương của bài toán \( (P_1) \). Đó có phải điều kiện đủ không? Vì sao?</li>
+                <li>Cho \( x^0 = (\alpha, 0)^T \). Xác định \( x^1 \) bằng thuật toán Newton thuần túy. Điểm \( x^1 \) có phải là nghiệm tối ưu của bài toán \( (P_1) \) không?</li>
+            </ol>
+        
+            <h3>2. Giải bài toán</h3>
+            <p>
+                \[
+                \min \{ k(x) = \langle \omega, x \rangle + \beta : x \in D \}
+                \]
+                bằng thuật toán hình học với \( \omega = (6, 12)^T \) và 
+                \[
+                D = \{ x \in \mathbb{R}^2 : x_1 - x_2 \leq 3, 6x_1 + 3x_2 \geq 12, x_1 \geq 1, x_2 \geq 0 \}.
+                \]
+            </p>
+        
+            <h3>3. Xét bài toán</h3>
+            <p>
+                \[
+                \min g(x) = \langle v, x \rangle \quad \text{v.d.k. } x \in X,
+                \]
+                (P<sub>2</sub>)
+            </p>
+            <p>Trong đó \( v \in \mathbb{R}^n \setminus \{0\} \) và \( X \subset \mathbb{R}^n \) là tập lồi đa diện khác rỗng. Chứng minh rằng bài toán \( (P_2) \) không có nghiệm tối ưu khi và chỉ khi tồn tại một hướng lùi xa \( d \) của \( X \) thỏa mãn
+                \[
+                \langle v, d \rangle < 0.
+                \]
+            </p>
+        </div>
+
+        <div class="page" id="Giải Đề 5"></div>
+
+        <div class="page" id="Đề 6">
+            
+            <h2>Đề 6 - Kiểm tra giữa kỳ: Nhập môn Tối ưu - HK20201</h2>
+
+            <p><strong>Kí hiệu:</strong> \( \beta := \text{ngày sinh và } \alpha := \text{tháng sinh của em} \)</p>
+
+            <h3>1. Xét bài toán</h3>
+            <p>
+                \[
+                \min h(x) = (x_1 - \alpha)x_2 + (x_1 - \alpha)^2 + 3(x_2 - 6)^2 \quad \text{v.d.k. } x \in \mathbb{R}^2.
+                \]
+                (P<sub>1</sub>)
+            </p>
+            <ol type="i">
+                <li>Hàm \( h(x) \) có phải là hàm lồi trên \( \mathbb{R}^2 \) không?</li>
+                <li>Phát biểu điều kiện cần bậc nhất của nghiệm tối ưu địa phương của bài toán \( (P_1) \). Đó có phải điều kiện đủ không? Vì sao?</li>
+                <li>Cho \( x^0 = (\alpha, 6)^T \). Xác định \( x^1 \) bằng thuật toán Gradient với thủ tục tìm chính xác theo tia. Điểm \( x^1 \) có phải là nghiệm tối ưu của bài toán \( (P_1) \) không?</li>
+            </ol>
+
+            <h3>2. Giải bài toán</h3>
+            <p>
+                \[
+                \min \{ \varphi(x) = \langle c, x \rangle + \beta : x \in Q \}
+                \]
+                bằng thuật toán hình học với \( c = (16, 8)^T \) và 
+                \[
+                Q = \{ x \in \mathbb{R}^2 : -x_1 + x_2 \leq 3, 3x_1 + 6x_2 \geq 12, x_2 \geq 1, x_1 \geq 0 \}.
+                \]
+            </p>
+
+            <h3>3. Cho điểm bất kỳ \( u^0 \in \mathbb{R}^n \) có \( \nabla f(u^0) \neq 0 \). Xét bài toán</h3>
+            <p>
+                \[
+                \min g(u) = \frac{1}{2} u^T M u - \langle d, u \rangle + \beta \quad \text{v.d.k. } u \in \mathbb{R}^n,
+                \]
+                (P<sub>2</sub>)
+            </p>
+            <p>Trong đó \( M \) là ma trận cấp \( n \times n \) đối xứng, xác định dương và vector \( d \in \mathbb{R}^n \setminus \{0\} \). Giả sử \( u^1 \) được xác định bằng thuật toán Newton thuần túy. Chứng minh rằng \( u^1 \in \text{Argmin}(P_2) \).</p>
+        </div>
+
+        <div class="page" id="Giải Đề 6"></div>
+
+        <div class="page" id="Đề 7">
+
+            <h2>Đề 7 - Kiểm tra giữa kỳ: Nhập môn Tối ưu - HK20201</h2>
+
+            <p><strong>Kí hiệu:</strong> \( \beta := \text{ngày sinh và } \alpha := \text{tháng sinh của em} \)</p>
+
+            <h3>1. Xét bài toán</h3>
+            <p>
+                \[
+                \min h(x) = \langle c, x \rangle \quad \text{v.d.k. } x \in X,
+                \]
+                (P<sub>1</sub>)
+            </p>
+            <p>Trong đó vector \( c \in \mathbb{R}^n \setminus \{0\} \) và \( X \subset \mathbb{R}^n \) là tập lồi đa diện khác rỗng. Chứng minh rằng bài toán \( (P_1) \) không có nghiệm tối ưu khi và chỉ khi tồn tại một hướng lùi xa \( d \) của \( X \) thỏa mãn
+                \[
+                \langle c, d \rangle < 0.
+                \]
+            </p>
+
+            <h3>2. Giải bài toán</h3>
+            <p>
+                \[
+                \min \{ k(x) = \langle \omega, x \rangle + \beta : x \in D \}
+                \]
+                bằng thuật toán hình học với \( \omega = (6, 12)^T \) và 
+                \[
+                D = \{ x \in \mathbb{R}^2 : x_1 - x_2 \leq 3, 8x_1 + 4x_2 \geq 16, x_2 \geq 0, x_1 \geq 1 \}.
+                \]
+            </p>
+
+            <h3>3. Xét bài toán</h3>
+            <p>
+                \[
+                \min g(x) = 3x_2^2 + x_1^2 - 8x_1 + 4x_2 + 2x_1x_2 + \alpha \quad \text{v.d.k. } x \in \mathbb{R}^2.
+                \]
+                (P<sub>2</sub>)
+            </p>
+            <ol type="i">
+                <li>Hàm \( g(x) \) có phải là hàm lồi trên \( \mathbb{R}^2 \) không?</li>
+                <li>Phát biểu điều kiện cần bậc nhất của nghiệm tối ưu địa phương của bài toán \( (P_2) \). Đó có phải điều kiện đủ không? Vì sao?</li>
+                <li>Cho \( x^0 = (\alpha, 0)^T \). Xác định \( x^1 \) bằng thuật toán Newton thuần túy. Điểm \( x^1 \) có phải là nghiệm tối ưu của bài toán \( (P_2) \) không?</li>
+            </ol>
+
+        </div>
+
+        <div class="page" id="Giải Đề 7"></div>
+
+        <div class="page" id="Đề 8">
+
+            <h2>Đề 8 - Kiểm tra giữa kỳ: Nhập môn Tối ưu - HK20201</h2>
+
+            <p><strong>Kí hiệu:</strong> \( \beta := \text{ngày sinh và } \alpha := \text{tháng sinh của em} \)</p>
+
+            <h3>1. Xét bài toán</h3>
+            <p>
+                \[
+                \min h(x) = 3(x_1 - 6)^2 + (x_2 - \alpha)^2 + x_1(x_2 - \alpha) \quad \text{v.d.k. } x \in \mathbb{R}^2.
+                \]
+                (P<sub>1</sub>)
+            </p>
+            <ol type="i">
+                <li>Hàm số \( h(x) \) có phải là hàm lồi trên \( \mathbb{R}^2 \) không?</li>
+                <li>Phát biểu điều kiện cần bậc nhất của nghiệm tối ưu địa phương của bài toán \( (P_1) \). Đó có phải điều kiện đủ không? Vì sao?</li>
+                <li>Cho \( x^0 = (6, \alpha)^T \). Xác định \( x^1 \) bằng thuật toán Gradient với thủ tục tìm chính xác theo tia. Điểm \( x^1 \) có phải là nghiệm tối ưu của bài toán \( (P_1) \) không?</li>
+            </ol>
+
+            <h3>2. Cho hàm số \( f : \mathbb{R}^n \rightarrow \mathbb{R} \) và xét bài toán</h3>
+            <p>
+                \[
+                \min f(x) \quad \text{v.d.k. } x \in \mathbb{R}^n.
+                \]
+                (P<sub>2</sub>)
+            </p>
+            <ol type="i">
+                <li>Giả sử \( f(x) = \frac{1}{2} x^T M x - \langle d, x \rangle + \alpha \), trong đó \( M \) là ma trận cấp \( n \times n \) đối xứng, xác định dương và vector \( d \in \mathbb{R}^n \setminus \{0\} \). Chứng minh rằng, việc giải bài toán \( (P_2) \) tương đương với việc giải hệ phương trình tuyến tính \( Mx = d \).</li>
+                <li>Nếu \( f(x) \) là hàm affine thì có cần xây dựng thuật toán giải bài toán \( (P_2) \) không? Vì sao?</li>
+            </ol>
+
+            <h3>3. Giải bài toán</h3>
+            <p>
+                \[
+                \max \{ k(x) = \langle \omega, x \rangle + \beta : x \in D \}
+                \]
+                bằng thuật toán hình học với \( \omega = (24, 12)^T \) và 
+                \[
+                D = \{ x \in \mathbb{R}^2 : 3x_1 + 6x_2 \geq 12, -x_1 + x_2 \leq 3, x_2 \geq 1, x_1 \geq 0 \}.
+                \]
+            </p>
+        </div>
+        <!-- Trang 22-->
+        <div class="page" id="Giải Đề 8"></div>
+
     </div>
 
     <div class="tooltip" id="tooltip"></div>
